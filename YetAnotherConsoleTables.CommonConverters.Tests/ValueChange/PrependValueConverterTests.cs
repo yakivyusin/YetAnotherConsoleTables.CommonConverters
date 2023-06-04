@@ -2,7 +2,7 @@
 
 namespace YetAnotherConsoleTables.CommonConverters.Tests.ValueChange
 {
-    public class PrependValueConverterTests
+    public class PrependValueConverterTests : BaseTests
     {
         private class PrependIntToString
         {
@@ -21,10 +21,6 @@ namespace YetAnotherConsoleTables.CommonConverters.Tests.ValueChange
             [TableMemberConverter<PrependValueConverter>(ConstructorArgs = new object[] { "prefix:" })]
             public int Value { get; set; }
         }
-
-        private readonly StringWriter _writer = new();
-
-        private string ValueLine => _writer.ToString().Split(_writer.NewLine, StringSplitOptions.RemoveEmptyEntries)[3];
 
         [Theory]
         [InlineData(null, "| 5     |")]

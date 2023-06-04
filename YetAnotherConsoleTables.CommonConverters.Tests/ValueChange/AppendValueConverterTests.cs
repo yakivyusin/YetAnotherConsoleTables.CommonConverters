@@ -2,7 +2,7 @@
 
 namespace YetAnotherConsoleTables.CommonConverters.Tests.ValueChange
 {
-    public class AppendValueConverterTests
+    public class AppendValueConverterTests : BaseTests
     {
         private class AppendIntToString
         {
@@ -21,10 +21,6 @@ namespace YetAnotherConsoleTables.CommonConverters.Tests.ValueChange
             [TableMemberConverter<AppendValueConverter>(ConstructorArgs = new object[] { ":suffix" })]
             public int Value { get; set; }
         }
-
-        private readonly StringWriter _writer = new();
-
-        private string ValueLine => _writer.ToString().Split(_writer.NewLine, StringSplitOptions.RemoveEmptyEntries)[3];
 
         [Theory]
         [InlineData(null, "| 5     |")]
