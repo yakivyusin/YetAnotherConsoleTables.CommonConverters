@@ -1,7 +1,7 @@
-﻿using YetAnotherConsoleTables.CommonConverters.ChainConverters;
+﻿using YetAnotherConsoleTables.CommonConverters.Chain;
 using YetAnotherConsoleTables.CommonConverters.ValueChange;
 
-namespace YetAnotherConsoleTables.CommonConverters.Tests.ChainConverters
+namespace YetAnotherConsoleTables.CommonConverters.Tests.Chain
 {
     public class ChainedConverter_4Tests : BaseTests
     {

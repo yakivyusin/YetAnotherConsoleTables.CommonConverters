@@ -1,4 +1,4 @@
-﻿namespace YetAnotherConsoleTables.CommonConverters.ChainConverters
+﻿namespace YetAnotherConsoleTables.CommonConverters.Chain
 {
     public class ChainedConverter<T1, T2> : BaseChainedConverter
         where T1 : TableMemberConverter

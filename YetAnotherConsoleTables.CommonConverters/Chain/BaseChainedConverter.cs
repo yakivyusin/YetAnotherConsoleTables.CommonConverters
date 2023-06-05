@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace YetAnotherConsoleTables.CommonConverters.ChainConverters
+namespace YetAnotherConsoleTables.CommonConverters.Chain
 {
     public abstract class BaseChainedConverter : TableMemberConverter
     {
