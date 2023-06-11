@@ -1,5 +1,10 @@
 ﻿namespace YetAnotherConsoleTables.CommonConverters.Chain
 {
+    /// <summary>
+    /// Chain of five converters: <typeparamref name="T5"/>(<typeparamref name="T4"/>(<typeparamref name="T3"/>(<typeparamref name="T2"/>(<typeparamref name="T1"/>(value))))). To initialize the converter, pass five object arrays - constructor arguments for each converter.
+    /// <para><typeparamref name="T1"/> must support conversion of the target field/property type.</para>
+    /// <para><typeparamref name="T2"/>, <typeparamref name="T3"/>, <typeparamref name="T4"/> and <typeparamref name="T5"/> must support conversion of <see cref="System.String"/>.</para>
+    /// </summary>
     public class ChainedConverter<T1, T2, T3, T4, T5> : BaseChainedConverter
         where T1 : TableMemberConverter
         where T2 : TableMemberConverter
@@ -7,6 +12,9 @@
         where T4 : TableMemberConverter
         where T5 : TableMemberConverter
     {
+        /// <summary>
+        /// Initializes the converter.
+        /// </summary>
         public ChainedConverter(
             object[] converterArguments1,
             object[] converterArguments2,

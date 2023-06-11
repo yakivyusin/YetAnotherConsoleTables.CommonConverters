@@ -1,11 +1,19 @@
 ﻿namespace YetAnotherConsoleTables.CommonConverters.Chain
 {
+    /// <summary>
+    /// Chain of four converters: <typeparamref name="T4"/>(<typeparamref name="T3"/>(<typeparamref name="T2"/>(<typeparamref name="T1"/>(value)))). To initialize the converter, pass four object arrays - constructor arguments for each converter.
+    /// <para><typeparamref name="T1"/> must support conversion of the target field/property type.</para>
+    /// <para><typeparamref name="T2"/>, <typeparamref name="T3"/> and <typeparamref name="T4"/> must support conversion of <see cref="System.String"/>.</para>
+    /// </summary>
     public class ChainedConverter<T1, T2, T3, T4> : BaseChainedConverter
         where T1 : TableMemberConverter
         where T2 : TableMemberConverter
         where T3 : TableMemberConverter
         where T4 : TableMemberConverter
     {
+        /// <summary>
+        /// Initializes the converter.
+        /// </summary>
         public ChainedConverter(
             object[] converterArguments1,
             object[] converterArguments2,

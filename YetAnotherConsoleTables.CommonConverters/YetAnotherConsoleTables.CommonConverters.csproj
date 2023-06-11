@@ -9,6 +9,7 @@
     <PackageProjectUrl>https://github.com/yakivyusin/YetAnotherConsoleTables.CommonConverters</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>console;table;output;consoletable;text-table</PackageTags>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
