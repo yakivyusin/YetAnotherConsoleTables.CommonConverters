@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.1</Version>
+    <Version>1.0.0</Version>
     <Authors>yakivyusin</Authors>
     <Copyright>Copyright 2023</Copyright>
     <Description>The set of common table member converters for the YetAnotherConsoleTables library.</Description>
