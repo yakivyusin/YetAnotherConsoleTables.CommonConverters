@@ -5,7 +5,7 @@ namespace YetAnotherConsoleTables.CommonConverters.Enumerable
 {
     /// <summary>
     /// Uses the first member of the original IEnumerable&lt;<typeparamref name="T"/>&gt;. 
-    /// <para>You can initialize the converter with the boolean value - use FirstOrDefault (default value w/o parameter) or First.</para>
+    /// <para>You can initialize the converter with the boolean value - use FirstOrDefault (<see langword="true" />; default value w/o parameter) or First (<see langword="false" />).</para>
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class EnumerableFirstConverter<T> : TableMemberConverter<IEnumerable<T>>
