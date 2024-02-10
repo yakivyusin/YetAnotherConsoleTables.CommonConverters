@@ -13,6 +13,10 @@ The set of common table member converters for the [YetAnotherConsoleTables](http
     - [AppendValueConverter](#appendvalueconverter)
     - [PrependValueConverter](#prependvalueconverter)
     - [WrapValueConverter](#wrapvalueconverter)
+  - Enumerable namespace
+    - [EnumerableFirstConverter](#enumerablefirstconverter)
+    - [EnumerableLastConverter](#enumerablelastconverter)
+    - [EnumerableJoinConverter](#enumerablejoinconverter)
 
 ## AppendValueConverter
 Append a suffix to member values. Any object of attribute parameter types can be used as the suffix.
@@ -135,4 +139,56 @@ class Box
 ------------------
 | ¤5.00 per item |
 ------------------
+```
+## EnumerableFirstConverter
+Use the first element of the `IEnumerable`. The first element can be retrieved using `FirstOrDefault` or `First` LINQ method.
+```
+class Student
+{
+    [TableMember(DisplayName = "First Mark")]
+    [TableMemberConverter<EnumerableFirstConverter<string>>]
+    public string[] Marks { get; set; } = new[] { "A", "A", "F" };
+}
+```
+```
+--------------
+| First Mark |
+--------------
+| A          |
+--------------
+```
+
+## EnumerableLastConverter
+Use the last element of the `IEnumerable`. The last element can be retrieved using `LastOrDefault` or `Last` LINQ method.
+```
+class Student
+{
+    [TableMember(DisplayName = "Last Mark")]
+    [TableMemberConverter<EnumerableLastConverter<string>>]
+    public string[] Marks { get; set; } = new[] { "A", "A", "F" };
+}
+```
+```
+------------
+| Last Mark |
+-------------
+| F         |
+-------------
+```
+
+## EnumerableJoinConverter
+Join all elements of the `IEnumerable` using the passed separator.
+```
+class Student
+{
+    [TableMemberConverter<EnumerableJoinConverter<string>>(ConstructorArgs = new object[] { ", " })]
+    public string[] Marks { get; set; } = new[] { "A", "A", "F" };
+}
+```
+```
+-----------
+| Marks   |
+-----------
+| A, A, F |
+-----------
 ```
