@@ -1,9 +1,8 @@
-﻿namespace YetAnotherConsoleTables.CommonConverters.Tests
-{
-    public abstract class BaseTests
-    {
-        protected readonly StringWriter _writer = new();
+﻿namespace YetAnotherConsoleTables.CommonConverters.Tests;
 
-        protected string ValueLine => _writer.ToString().Split(_writer.NewLine, StringSplitOptions.RemoveEmptyEntries)[3];
-    }
+public abstract class BaseTests
+{
+    protected readonly StringWriter _writer = new();
+
+    protected string ValueLine => _writer.ToString().Split(_writer.NewLine, StringSplitOptions.RemoveEmptyEntries)[3];
 }
